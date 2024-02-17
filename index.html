@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello world</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js" integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+      <p> hello world</p>
+    <script>
+      var socket = io();
+      var cnsp = io('/custom-namespace ');
+      socket.on("connectedRoom", (data) => {
+        document.body.innerHTML = ""
+        document.write(data);
+      })
+     // socket.on('newConnection', (data) => {
+     //   document.body.innerHTML = ""
+     //   document.write(data.desc)
+     // })
+      //socket.on('broadcast', (data) => {
+      //  document.body.innerHTML = ""
+      //  document.write(data.desc)
+      //})
+      // socket.on('message', (data) => { document.write(data)});
+     // socket.on('myCustomEvent', (data) => document.write(data.desc))
+     // socket.emit('customEventFormClient' , {desc: "this is event from Client "})
+    </script>
+  </body>
+</html>
